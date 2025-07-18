@@ -1,0 +1,32 @@
+@import "../../../style/styles.module.scss";
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    @include mediaTo(800px) {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .categories_list {
+        width: calc(100% - 390px);
+        display: flex;
+        flex-direction: column;
+
+        @include mediaTo(800px) {
+            width: 100%;
+        }
+    }
+
+    .press {
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        @include mediaTo(800px) {
+            width: 100%;
+        }
+    }
+}

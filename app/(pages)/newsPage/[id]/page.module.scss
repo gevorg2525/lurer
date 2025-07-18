@@ -1,0 +1,15 @@
+@import "../../../style/styles.module.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 439px);
+    width: 100%;
+    margin: 0% auto;
+    max-width: $container;
+    gap: 30px;
+    @include mediaTo(800px) {
+        margin-top: 20px;
+        padding: 0px 10px;
+    }
+}

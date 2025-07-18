@@ -1,0 +1,26 @@
+@import "../../../../style/styles.module.scss";
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    @include mediaTo(800px) {
+        flex-direction: column;
+    }
+    .list {
+        width: calc(100% - 420px);
+        @include mediaTo(800px) {
+            width: 100%;
+        }
+    }
+
+    .follow {
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        max-height: 120px;
+        @include mediaTo(800px) {
+            width: 100%;
+        }
+    }
+}

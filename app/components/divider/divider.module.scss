@@ -1,0 +1,27 @@
+@import "../../style/styles.module.scss";
+.divider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 6px;
+    border-top: 1px solid #e4e7f0;
+    border-bottom: 1px solid #e4e7f0;
+
+    background: #ef800c;
+    background: linear-gradient(
+        118deg,
+        rgba(239, 128, 12, 1) 40px,
+        rgba(247, 247, 247, 1) 20px,
+        rgba(255, 255, 255, 1) 20px,
+        rgb(255, 255, 255, 0) 20px
+    );
+
+    // background: #f5f6f9;
+    // background: linear-gradient(
+    //     131deg,
+    //     rgba(239, 128, 12, 1) 40px,
+    //     rgb(255, 255, 255, 1) 10px,
+    //     rgba(238, 245, 245, 0) 10px,
+    //     rgba(228, 231, 240, 0) 20%
+    // );
+}

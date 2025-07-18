@@ -1,0 +1,54 @@
+@import "../../../style/styles.module.scss";
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 260px;
+    // overflow-y: auto;
+    max-height: 930px;
+    @include mediaTo(800px) {
+        width: 100%;
+        max-height: 100%;
+        // overflow-y: none;
+    }
+
+    .news_items {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        text-decoration: none;
+        color: $text_color;
+        margin-bottom: 5px;
+        @include mediaTo(800px) {
+            width: 100%;
+        }
+        .imageDiv {
+            display: none;
+            width: 100%;
+            max-height: 160px;
+            object-fit: cover;
+
+            @include mediaTo(800px) {
+                height: 100%;
+                max-height: 430px;
+                display: block;
+            }
+        }
+
+        .imageDiv.visible {
+            display: block;
+        }
+
+        h3 {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 160%;
+            letter-spacing: 0px;
+            vertical-align: middle;
+            transition: 0.3s;
+        }
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+}

@@ -1,0 +1,143 @@
+@import "../../../style/styles.module.scss";
+
+.container {
+    @include display-center(flex, space-between, center);
+    max-width: 1340px;
+    height: 120px;
+    width: 100%;
+    @include mediaTo($size960) {
+        height: 90px;
+        // @include display-center(flex, center, center);
+        // flex-direction: column;
+    }
+
+    .burger_menu {
+        position: relative;
+        cursor: pointer;
+        display: none;
+        width: 42px;
+        height: 42px;
+        z-index: 20;
+        @include mediaTo($size960) {
+            display: block;
+        }
+        .menu_icon {
+            position: absolute;
+            width: 42px;
+            height: 42px;
+            transition: 0.8s;
+            cursor: pointer;
+            opacity: 0;
+        }
+        .menu_icon.visible {
+            opacity: 1;
+        }
+    }
+
+    .logo_link {
+        width: 40%;
+        max-width: 210px;
+        min-width: 146px;
+        text-decoration: none;
+        position: relative;
+        margin-left: -10px;
+        @include mediaTo($size960) {
+            // display: flex;
+            // flex-direction: column;
+            // align-items: center;
+            // justify-content: center;
+            // gap: 10px;
+        }
+
+        img {
+            width: 100%;
+            @include mediaTo($size960) {
+                // height: 60px;
+                // object-fit: contain;
+            }
+        }
+
+        .date {
+            width: 100%;
+            position: absolute;
+            font-weight: 400;
+            font-size: 14px;
+            color: #01042080;
+            bottom: 0px;
+            left: 11px;
+            // @include mediaTo($size960) {
+            //     position: relative;
+            //     margin-top: -20px;
+            //     text-align: center;
+            // }
+        }
+    }
+
+    .search_container {
+        @include display-center(flex, flex-end, center);
+        width: 60%;
+        @include mediaTo($size960) {
+            width: auto;
+            // width: 80px;
+            // padding: 0px 20px;
+        }
+
+        .search_block {
+            display: flex;
+            align-items: center;
+            .search {
+                width: 337px;
+                background: #f5f6f9;
+                height: 42px;
+                border: none;
+                padding: 0px 20px;
+                font-family: Arial Armenian;
+                font-size: 16.61px;
+                font-weight: 400;
+                line-height: 19.09px;
+                @include mediaTo($size960) {
+                    width: 0px;
+                    overflow: hidden;
+                    padding: 0;
+                    // width: 80px;
+                    // padding: 0px 20px;
+                }
+            }
+
+            .search.active {
+                // position: absolute;
+                // width: 200px;
+                @include mediaTo($size960) {
+                    right: 42px;
+                    position: absolute;
+                    z-index: 45;
+                    width: calc(100% - 86px);
+                    overflow: hidden;
+                    padding: 0;
+                    // width: 80px;
+                    // padding: 0px 20px;
+                }
+            }
+            .search_btn {
+                width: 42px;
+                height: 42px;
+                background: #f5f6f9;
+                border: none;
+                font-size: 19.37px;
+                font-weight: 400;
+                line-height: 22.28px;
+                transition: 0.3s;
+                cursor: pointer;
+                &:hover {
+                    background: #ef800c;
+                }
+            }
+        }
+
+        .languages {
+            @include mediaTo($size960) {
+                display: none;
+            }
+        }
+    }
+}

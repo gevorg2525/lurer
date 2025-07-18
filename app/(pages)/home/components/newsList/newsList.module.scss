@@ -1,0 +1,105 @@
+@import "../../../../style/styles.module.scss";
+
+.newsList {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f5f6f9;
+    gap: 15px;
+    height: auto;
+    min-height: 430px;
+    max-height: 930px;
+    overflow-y: auto;
+
+    @include mediaTo(800px) {
+        height: 60px;
+        overflow: hidden;
+        min-height: auto;
+        max-height: auto;
+    }
+    .title_block {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        @include mediaTo(800px) {
+            justify-content: center;
+        }
+        .title {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 160%;
+            vertical-align: middle;
+        }
+
+        .arrow {
+            display: none;
+            transition: 0.3s;
+            @include mediaTo(800px) {
+                display: block;
+            }
+        }
+
+        .arrow.arrowUp {
+            transform: rotate(-180deg);
+        }
+    }
+
+    .newsItems {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .newsItem {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            text-decoration: none;
+
+            .date {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 160%;
+                color: $secondary-color;
+                letter-spacing: 0px;
+                vertical-align: middle;
+            }
+
+            .content {
+                flex: 1;
+
+                .newsTitle {
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 140%;
+                    letter-spacing: 0px;
+                    vertical-align: middle;
+                    color: $text_color;
+                    transition: 0.3s;
+                }
+
+                .newsTitle.bold {
+                    color: $secondary-color;
+                }
+            }
+            &:hover {
+                .content {
+                    .newsTitle {
+                        color: $secondary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.newsList.visible {
+    @include mediaTo(800px) {
+        height: 100%;
+        max-height: 100%;
+    }
+}

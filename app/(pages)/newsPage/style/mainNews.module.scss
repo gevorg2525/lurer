@@ -1,0 +1,30 @@
+@import "../../../style/styles.module.scss";
+
+.container {
+    display: flex;
+    width: 100%;
+    padding-top: 50px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    @include mediaTo(800px) {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-top: 10px;
+        gap: 40px;
+    }
+    .left_block {
+        padding-top: 20px;
+        width: calc(100% - 420px);
+        @include mediaTo(800px) {
+            padding-top: 0px;
+            width: 100%;
+        }
+    }
+
+    .right_block {
+        width: 400px;
+        @include mediaTo(800px) {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+@import "../../../style/styles.module.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

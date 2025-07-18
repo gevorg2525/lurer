@@ -1,0 +1,73 @@
+@import "../../../style/styles.module.scss";
+
+.container {
+    position: relative;
+    display: flex;
+    z-index: 45;
+    height: 72px;
+    width: 100%;
+    max-width: 1340px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 2px 20px 0px #d2d2d21a;
+    border: 1px solid #f5f6f9;
+    @include mediaTo($size960) {
+        width: 70px;
+        display: none;
+        // @include display-center(flex, center, center);
+        // flex-direction: column;
+        // height: auto;
+        // background: transparent;
+    }
+
+    .navigation {
+        display: flex;
+        gap: 30px;
+        @include mediaTo($size960) {
+            display: none;
+            // @include display-center(flex, center, center);
+            // flex-direction: column;
+        }
+    }
+
+    .burger_menu {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        width: 70px;
+        height: 100%;
+        z-index: 20;
+        .menu_icon {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+
+            cursor: pointer;
+            opacity: 0;
+        }
+        .menu_icon.visible {
+            transition: 0.8s;
+            opacity: 1;
+        }
+    }
+}
+
+.nav_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    color: $link-color;
+}
+
+.nav_link.active {
+    color: $link-hover-color;
+}
+
+.nav_link:hover {
+    color: $link-hover-color;
+}

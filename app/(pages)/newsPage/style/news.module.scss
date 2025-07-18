@@ -1,0 +1,122 @@
+@import "../../../style/styles.module.scss";
+
+.container {
+    width: 100%;
+    gap: 20px;
+    @include display-flex-direction(flex, column, start);
+
+    .head_news {
+        display: flex;
+        width: 100%;
+        gap: 15px;
+        text-decoration: none;
+        color: $text_color;
+        @include mediaTo(800px) {
+            flex-direction: column;
+        }
+
+        &:hover {
+            h3 {
+                transition: 0.3s;
+                color: $secondary-color;
+            }
+        }
+        .head_img {
+            width: calc(100% - 350px);
+            object-fit: cover;
+            @include mediaTo(800px) {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .content {
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            @include mediaTo(800px) {
+                flex-direction: column;
+                width: 100%;
+            }
+            h3 {
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 160%;
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 180%;
+                vertical-align: middle;
+            }
+
+            button {
+                width: 142px;
+                height: 42px;
+                border: none;
+                padding: 10px;
+                background: #ef800c;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 160%;
+                vertical-align: middle;
+                color: #ffffff;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .news_items {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        @include mediaTo(800px) {
+            flex-direction: column;
+        }
+        .news_item {
+            display: flex;
+            flex-direction: column;
+            padding: 10px 20px;
+            gap: 10px;
+            width: 50%;
+            max-width: 440px;
+            background-color: $background;
+            text-decoration: none;
+            color: $text_color;
+            @include mediaTo(800px) {
+                width: 100%;
+                max-width: 800px;
+            }
+
+            &:hover {
+                h3 {
+                    color: $secondary_color;
+                }
+                p {
+                    color: $secondary_color;
+                }
+            }
+            .item_img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+
+            h3 {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 160%;
+                transition: 0.3s;
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 160%;
+                transition: 0.3s;
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+@import "../../style/styles.module.scss";
+.container {
+    // display: flex;
+    width: 100%;
+    // max-width: 1200px;
+    position: relative;
+    max-height: 70vh;
+    overflow: hidden;
+    .image_div {
+        width: 100%;
+        overflow: hidden;
+        @include proportion(100%);
+        cursor: pointer;
+        transition: 0.3s;
+        max-height: 500px;
+        img {
+            max-height: 70vh;
+            height: 100%;
+            &:hover {
+                transform: scale(1.08);
+            }
+        }
+    }
+}

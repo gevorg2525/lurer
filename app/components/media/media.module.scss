@@ -1,0 +1,15 @@
+@import "../../style/styles.module.scss";
+.media {
+    width: 100%;
+    @include display-center(flex, flex-end, stretch);
+    gap: 5px;
+    padding: 0px 10px;
+    max-width: 180px;
+
+    img {
+        transition: 0.3s;
+        &:hover {
+            transform: scale(1.08);
+        }
+    }
+}
